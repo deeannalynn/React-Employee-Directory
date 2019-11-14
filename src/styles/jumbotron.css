@@ -1,9 +1,9 @@
-.header {
+.jumbotron {
     padding: 30px 0;
     color: #ffffff;
-    background-color: #101D42;
+    background-color: lightcoral;
     width: 100%;
     text-align: center;
-    border-bottom: 5px solid #DB162F;
+    border-bottom: 5px solid lightcyan;
     margin-bottom: 10px;
 }
