@@ -3,27 +3,19 @@ import "./style.css";
 
 function EmployeeCard(props) {
   return (
-    <div className="list">
-      <div className="img-container">
-        <img alt={props.name} src={props.image} />
-      </div>
-      <div className="content">
-        <ul>
-          <li>
-            <strong>Name:</strong> {props.name}
-          </li>
-          <li>
-            <strong>Company:</strong> {props.company}
-          </li>
-          <li>
-            <strong>Email:</strong> {props.email}
-          </li>
-        </ul>
-      </div>
-      <span onClick={() => props.removeEmployee(props.id)} className="remove">
-        𝘅
+    <table className="table">
+      <tbody className="content">
+        <tr>
+          <th scope="row">{props.id}</th>
+          <td>{props.name}</td>
+          <td>{props.company}</td>
+          <td>{props.email}</td>
+        </tr>
+        </tbody>
+    <span onClick={() => props.removeEmployee(props.id)} className="remove">
+      𝘅
       </span>
-    </div>
+    </table >
   );
 }
 

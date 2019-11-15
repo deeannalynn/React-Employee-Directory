@@ -3,9 +3,10 @@ import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
 import EmployeeCard from "./components/EmployeeCard"
 import employees from "./employees.json";
+import TopRow from "./components/TopRow";
 import './App.css';
 
-class App extends Component {
+ class App extends Component {
   state = {
     employees
   };
@@ -16,10 +17,11 @@ class App extends Component {
   };
 
 
-  return() {
+  render() {
     return (
       <Wrapper>
         <Title>Employees List</Title>
+        <TopRow/>
         {this.state.employees.map(employee => (
           <EmployeeCard
             removeEmployee={this.removeEmployee}
