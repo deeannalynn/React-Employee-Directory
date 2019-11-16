@@ -1,14 +1,12 @@
 import React from "react";
 import Table from 'react-bootstrap/Table';
 import "./style.css";
-import TopRow from "../TopRow";
 
 
 function EmployeeCard(props) {
 
   return (
     <Table>
-      <TopRow/>
       <tbody>
       {props.employees.map(employee => (
         <tr>

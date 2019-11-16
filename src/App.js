@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
-// import EmployeeCard from "./components/EmployeeCard"
 import Table from 'react-bootstrap/Table';
-
 import employees from "./employees.json";
-// import TopRow from "./components/TopRow";
-// import './App.css';
+import SearchBar from './components/SearchBar';
+
 
 class App extends Component {
   state = {
@@ -23,7 +21,7 @@ class App extends Component {
     return (
       <Wrapper>
         <Title>Employees List</Title>
-        {/* <TopRow /> */}
+        <SearchBar />
         <Table striped bordered hover>
           <thead>
             <tr>
@@ -41,9 +39,10 @@ class App extends Component {
                 <td>{employee.name}</td>
                 <td>{employee.company}</td>
                 <td>{employee.email}</td>
-                <td>    <span onClick={() => employee.removeEmployee(employee.id)} className="remove">
+                <td>   
+                  <span onClick={() => employee.removeEmployee(employee.id)} className="remove">
                   𝘅
-                        </span>
+                  </span>
                 </td>
               </tr>
             ))}</tbody>
