@@ -1,30 +1,26 @@
-import React, { Component } from "react";
-// import Form from "react-bootstrap/Form";
-// import FormControl from "react-bootstrap/FormControl";
-import Button from "react-bootstrap/Button";
+import React from "react";
 import "./style.css";
 
 
-class SearchBar extends Component {
-state = {
 
-}
-
-// sortComp = id => {
-//     const employees = this.state.employees.filter(employee => employee.id !== id);
-//     this.setState({ employees });
-//   };
-
-render() {
+function SearchBar ({ handleSearchChange}) {
+    
     return (
-        // <Form inline id="searchbar">
-        //     <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-        //     <Button variant="outline-success" >Search</Button>
-        // </Form>
-        // <Button variant="outline-success" onClick={sortComp} >Sort Companies</Button>
-        null
-    );
-}
+        <div className="searchbox">
+        <form className="form-inline">
+          <input
+            className="form-control mr-sm-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+            onChange={e => handleSearchChange(e)}
+          />
+          <button className="btn my-2 my-sm-0" type="submit">
+            Search
+          </button>
+        </form>
+      </div>
+      );
 }
 
 export default SearchBar;

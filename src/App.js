@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Wrapper from "./components/Wrapper";
+// import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
 import EmployeeTable from "./components/EmployeeTable"
 import SearchBar from './components/SearchBar';

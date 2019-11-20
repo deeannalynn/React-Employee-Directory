@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import Button from 'react-bootstrap/Button';
-import Wrapper from "../Wrapper";
+// import Wrapper from "../Wrapper";
 import Table from 'react-bootstrap/Table';
 import employees from "../../../src/employees.json";
 import "./style.css";
@@ -16,7 +15,7 @@ class EmployeeTable extends Component {
     this.setState({ employees });
   };
 
-  sortComp() {
+  sortComp = () => {
     let company = "Sunopia"
     switch (company) {
       case "Sunopia":
@@ -54,7 +53,7 @@ class EmployeeTable extends Component {
   render() {
     return (
     <React.Fragment>
-      <Button onClick={this.sortComp} >Sort Companies</Button>
+      <button type="button" className="btn my-2 my-sm-0" variant="info" onClick={this.sortComp}> Sort Companies</button>
       <Table striped bordered hover>
         <thead>
           <tr>
