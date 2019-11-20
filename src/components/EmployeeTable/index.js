@@ -16,73 +16,74 @@ class EmployeeTable extends Component {
     this.setState({ employees });
   };
 
-  sortComp () {
+  sortComp() {
     let company = "Sunopia"
-    switch (company){
+    switch (company) {
       case "Sunopia":
-    let employees = this.state.employees.filter(employee => employee.company === company);
-    this.setState({ employees });
-    // company = "Airconix"
-    break;
-    // case "Airconix":
-    // let employees = this.state.employees.filter(employee => employee.company === company);
-    // this.setState({ employees });
-    // company = "Qualcore"
-    // break;
-    // case "Qualcore":
-    // let employees = this.state.employees.filter(employee => employee.company === company);
-    // this.setState({ employees });
-    // company = "Thermolock"
-    // break;
-    // case "Thermolock":
-    // let employees = this.state.employees.filter(employee => employee.company === company);
-    // this.setState({ employees });
-    // company = "Hivemind"
-    // break;
-    // case "Hivemind":
-    // let employees = this.state.employees.filter(employee => employee.company === company);
-    // this.setState({ employees });
-    // company = "Sunopia"
-    // break;
-    default:
-    console.log("YODa")
+        let employees = this.state.employees.filter(employee => employee.company === company);
+        this.setState({ employees });
+        // company = "Airconix"
+        break;
+      // case "Airconix":
+      // let employees = this.state.employees.filter(employee => employee.company === company);
+      // this.setState({ employees });
+      // company = "Qualcore"
+      // break;
+      // case "Qualcore":
+      // let employees = this.state.employees.filter(employee => employee.company === company);
+      // this.setState({ employees });
+      // company = "Thermolock"
+      // break;
+      // case "Thermolock":
+      // let employees = this.state.employees.filter(employee => employee.company === company);
+      // this.setState({ employees });
+      // company = "Hivemind"
+      // break;
+      // case "Hivemind":
+      // let employees = this.state.employees.filter(employee => employee.company === company);
+      // this.setState({ employees });
+      // company = "Sunopia"
+      // break;
+      default:
+        console.log("YODa")
+    };
   };
-};
 
-  
+
 
   render() {
-    return (<Wrapper>
-              <Button onClick={this.sortComp} >Sort Companies</Button>
-        <Table striped bordered hover>
-          <thead>
+    return (
+    <React.Fragment>
+      <Button onClick={this.sortComp} >Sort Companies</Button>
+      <Table striped bordered hover>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Company</th>
+            <th>Email</th>
+            <th>Remove</th>
+          </tr>
+        </thead>
+        <tbody>
+          {this.state.employees.map(employee => (
             <tr>
-              <th>ID</th>
-              <th>Name</th>
-              <th>Company</th>
-              <th>Email</th>
-              <th>Remove</th>
-            </tr>
-          </thead>
-          <tbody>
-            {this.state.employees.map(employee => (
-              <tr>
-                <th>{employee.id}</th>
-                <td>{employee.name}</td>
-                <td>{employee.company}</td>
-                <td>{employee.email}</td>
-                <td>   
-                 
-                  <span onClick={() => employee.removeEmployee(employee.id)} className="remove">
+              <th>{employee.id}</th>
+              <td>{employee.name}</td>
+              <td>{employee.company}</td>
+              <td>{employee.email}</td>
+              <td>
+
+                <span onClick={() => employee.removeEmployee(employee.id)} className="remove">
                   𝘅
                   </span>
-                </td>
-              </tr>
-            ))}</tbody>
-        </Table>
-        </Wrapper>
-  );
-}
+              </td>
+            </tr>
+          ))}</tbody>
+      </Table>
+    </React.Fragment>
+    );
+  }
 }
 
 export default EmployeeTable;
