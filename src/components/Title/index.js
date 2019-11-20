@@ -1,8 +1,12 @@
 import React from "react";
 import "./style.css";
 
-function Title(props) {
-  return <h1 className="title">{props.children}</h1>;
-}
+function Title() {
+  return (
+    <div className="jumbotron">
+    <h1>Employee Directory</h1>
+    <p>Search employee directory or sort</p>
+  </div>
+    )}
 
 export default Title;
